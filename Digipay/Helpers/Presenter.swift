@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-protocol PresentingView {
+protocol PresentingView: class {
     func willLoadingData()
     func didLoadingData()
     func warning(message: String)

@@ -1,5 +1,5 @@
 //
-//  MainCoordinator.swift
+//  LoginCoordinator.swift
 //  Digipay
 //
 //  Created by Mohammad Razipour on 12/24/19.
@@ -8,7 +8,11 @@
 
 import Foundation
 
-final class MainCoordinator: Coordinator {
+protocol LoginCoordinatorDelegate: class {
+    
+}
+
+final class LoginCoordinator: Coordinator {
     
     var screenFactory: ScreenFactory
     var coordinatorFactory: CoordinatorFactory
@@ -21,16 +25,16 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        startLoginCoordinator()
+        displayLoginScreen()
     }
     
 }
 
-extension MainCoordinator: LoginCoordinatorDelegate {
+extension LoginCoordinator: LoginScreenDelegate {
     
-    func startLoginCoordinator() {
-        let coordinator = self.coordinatorFactory.makeLoginCoordinator(self.router, delegate: self)
-        coordinator.start()
+    func displayLoginScreen(){
+        let vc = self.screenFactory.makeLoginScreen(delegate: self)
+        self.router.setRootModule(vc)
     }
     
 }
