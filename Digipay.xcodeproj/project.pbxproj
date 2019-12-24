@@ -11,6 +11,7 @@
 		11D09D5F23B213EA00CA2011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D09D5E23B213EA00CA2011 /* AppDelegate.swift */; };
 		11D09D6823B213EE00CA2011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D09D6723B213EE00CA2011 /* Assets.xcassets */; };
 		11D09D6B23B213EE00CA2011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D09D6923B213EE00CA2011 /* LaunchScreen.storyboard */; };
+		630374D05BCD27D7873E7199 /* Pods_Digipay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5A741E3097131FF37F8A33 /* Pods_Digipay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,9 @@
 		11D09D6723B213EE00CA2011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11D09D6A23B213EE00CA2011 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		11D09D6C23B213EE00CA2011 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D5A741E3097131FF37F8A33 /* Pods_Digipay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digipay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DDE25FD5899A30BE71F6268 /* Pods-Digipay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digipay.release.xcconfig"; path = "Pods/Target Support Files/Pods-Digipay/Pods-Digipay.release.xcconfig"; sourceTree = "<group>"; };
+		F6DFF9AD8D4578E1DA1EC938 /* Pods-Digipay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digipay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Digipay/Pods-Digipay.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630374D05BCD27D7873E7199 /* Pods_Digipay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,8 @@
 			children = (
 				11D09D5D23B213EA00CA2011 /* Digipay */,
 				11D09D5C23B213EA00CA2011 /* Products */,
+				E2A53B918143DC9030C4C686 /* Pods */,
+				4D54CD1F0C8B150F2F79C2E9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +108,23 @@
 			path = Digipay;
 			sourceTree = "<group>";
 		};
+		4D54CD1F0C8B150F2F79C2E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D5A741E3097131FF37F8A33 /* Pods_Digipay.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2A53B918143DC9030C4C686 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F6DFF9AD8D4578E1DA1EC938 /* Pods-Digipay.debug.xcconfig */,
+				6DDE25FD5899A30BE71F6268 /* Pods-Digipay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -108,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11D09D6F23B213EE00CA2011 /* Build configuration list for PBXNativeTarget "Digipay" */;
 			buildPhases = (
+				88D27EF1A46F907ED2F042B5 /* [CP] Check Pods Manifest.lock */,
 				11D09D5723B213EA00CA2011 /* Sources */,
 				11D09D5823B213EA00CA2011 /* Frameworks */,
 				11D09D5923B213EA00CA2011 /* Resources */,
@@ -166,6 +191,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		88D27EF1A46F907ED2F042B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Digipay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		11D09D5723B213EA00CA2011 /* Sources */ = {
@@ -314,6 +360,7 @@
 		};
 		11D09D7023B213EE00CA2011 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6DFF9AD8D4578E1DA1EC938 /* Pods-Digipay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -335,6 +382,7 @@
 		};
 		11D09D7123B213EE00CA2011 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DDE25FD5899A30BE71F6268 /* Pods-Digipay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
