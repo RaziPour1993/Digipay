@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1171F13623B2183800CBF64C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1171F13823B2183800CBF64C /* Localization.strings */; };
 		11D09D5F23B213EA00CA2011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D09D5E23B213EA00CA2011 /* AppDelegate.swift */; };
 		11D09D6823B213EE00CA2011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D09D6723B213EE00CA2011 /* Assets.xcassets */; };
 		11D09D6B23B213EE00CA2011 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11D09D6923B213EE00CA2011 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1171F13723B2183800CBF64C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		11D09D5B23B213EA00CA2011 /* Digipay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digipay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D09D5E23B213EA00CA2011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11D09D6723B213EE00CA2011 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -31,6 +33,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1171F13123B2180A00CBF64C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1171F13323B2181E00CBF64C /* Localization */,
+				1171F13223B2181100CBF64C /* Photos */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1171F13223B2181100CBF64C /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				11D09D6723B213EE00CA2011 /* Assets.xcassets */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		1171F13323B2181E00CBF64C /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				1171F13823B2183800CBF64C /* Localization.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		1171F13923B2184900CBF64C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				11D09D6923B213EE00CA2011 /* LaunchScreen.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1171F13A23B2185600CBF64C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				11D09D5E23B213EA00CA2011 /* AppDelegate.swift */,
+				11D09D6C23B213EE00CA2011 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		11D09D5223B213EA00CA2011 = {
 			isa = PBXGroup;
 			children = (
@@ -50,10 +94,9 @@
 		11D09D5D23B213EA00CA2011 /* Digipay */ = {
 			isa = PBXGroup;
 			children = (
-				11D09D5E23B213EA00CA2011 /* AppDelegate.swift */,
-				11D09D6723B213EE00CA2011 /* Assets.xcassets */,
-				11D09D6923B213EE00CA2011 /* LaunchScreen.storyboard */,
-				11D09D6C23B213EE00CA2011 /* Info.plist */,
+				1171F13A23B2185600CBF64C /* Config */,
+				1171F13923B2184900CBF64C /* Screens */,
+				1171F13123B2180A00CBF64C /* Resources */,
 			);
 			path = Digipay;
 			sourceTree = "<group>";
@@ -117,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11D09D6B23B213EE00CA2011 /* LaunchScreen.storyboard in Resources */,
+				1171F13623B2183800CBF64C /* Localization.strings in Resources */,
 				11D09D6823B213EE00CA2011 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +179,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1171F13823B2183800CBF64C /* Localization.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1171F13723B2183800CBF64C /* en */,
+			);
+			name = Localization.strings;
+			sourceTree = "<group>";
+		};
 		11D09D6923B213EE00CA2011 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -267,7 +319,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5CF5UAFXM;
-				INFOPLIST_FILE = Digipay/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Digipay/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -288,7 +340,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A5CF5UAFXM;
-				INFOPLIST_FILE = Digipay/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Digipay/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
