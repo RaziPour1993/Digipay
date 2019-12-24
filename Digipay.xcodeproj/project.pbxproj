@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1170F27923B22262004903F2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170F27823B22262004903F2 /* Coordinator.swift */; };
+		1170F27C23B222DB004903F2 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170F27A23B222DB004903F2 /* CoordinatorFactory.swift */; };
+		1170F27D23B222DB004903F2 /* MainCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170F27B23B222DB004903F2 /* MainCoordinatorFactory.swift */; };
+		1170F28023B222E3004903F2 /* MainScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170F27E23B222E2004903F2 /* MainScreenFactory.swift */; };
+		1170F28123B222E3004903F2 /* ScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170F27F23B222E2004903F2 /* ScreenFactory.swift */; };
+		1170F28523B222EA004903F2 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170F28223B222EA004903F2 /* Presentable.swift */; };
+		1170F28623B222EA004903F2 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170F28323B222EA004903F2 /* MainRouter.swift */; };
+		1170F28723B222EA004903F2 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170F28423B222EA004903F2 /* Router.swift */; };
+		1170F28923B22492004903F2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170F28823B22492004903F2 /* MainCoordinator.swift */; };
 		1171F13623B2183800CBF64C /* Localization.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1171F13823B2183800CBF64C /* Localization.strings */; };
 		11D09D5F23B213EA00CA2011 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D09D5E23B213EA00CA2011 /* AppDelegate.swift */; };
 		11D09D6823B213EE00CA2011 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11D09D6723B213EE00CA2011 /* Assets.xcassets */; };
@@ -15,6 +24,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1170F27823B22262004903F2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		1170F27A23B222DB004903F2 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		1170F27B23B222DB004903F2 /* MainCoordinatorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinatorFactory.swift; sourceTree = "<group>"; };
+		1170F27E23B222E2004903F2 /* MainScreenFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenFactory.swift; sourceTree = "<group>"; };
+		1170F27F23B222E2004903F2 /* ScreenFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenFactory.swift; sourceTree = "<group>"; };
+		1170F28223B222EA004903F2 /* Presentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		1170F28323B222EA004903F2 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
+		1170F28423B222EA004903F2 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		1170F28823B22492004903F2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		1171F13723B2183800CBF64C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localization.strings; sourceTree = "<group>"; };
 		11D09D5B23B213EA00CA2011 /* Digipay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Digipay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D09D5E23B213EA00CA2011 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +56,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1170F27323B22177004903F2 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1170F27423B221B0004903F2 /* Core */,
+				1170F28823B22492004903F2 /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1170F27423B221B0004903F2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1170F27723B221C7004903F2 /* Router */,
+				1170F27623B221BF004903F2 /* ScreenFactory */,
+				1170F27523B221B7004903F2 /* CoordinatorFactory */,
+				1170F27823B22262004903F2 /* Coordinator.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		1170F27523B221B7004903F2 /* CoordinatorFactory */ = {
+			isa = PBXGroup;
+			children = (
+				1170F27A23B222DB004903F2 /* CoordinatorFactory.swift */,
+				1170F27B23B222DB004903F2 /* MainCoordinatorFactory.swift */,
+			);
+			path = CoordinatorFactory;
+			sourceTree = "<group>";
+		};
+		1170F27623B221BF004903F2 /* ScreenFactory */ = {
+			isa = PBXGroup;
+			children = (
+				1170F27E23B222E2004903F2 /* MainScreenFactory.swift */,
+				1170F27F23B222E2004903F2 /* ScreenFactory.swift */,
+			);
+			path = ScreenFactory;
+			sourceTree = "<group>";
+		};
+		1170F27723B221C7004903F2 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1170F28323B222EA004903F2 /* MainRouter.swift */,
+				1170F28223B222EA004903F2 /* Presentable.swift */,
+				1170F28423B222EA004903F2 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		1171F13123B2180A00CBF64C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +167,7 @@
 		11D09D5D23B213EA00CA2011 /* Digipay */ = {
 			isa = PBXGroup;
 			children = (
+				1170F27323B22177004903F2 /* Coordinator */,
 				1171F13A23B2185600CBF64C /* Config */,
 				1171F13923B2184900CBF64C /* Screens */,
 				1171F13123B2180A00CBF64C /* Resources */,
@@ -218,7 +285,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1170F27D23B222DB004903F2 /* MainCoordinatorFactory.swift in Sources */,
+				1170F28623B222EA004903F2 /* MainRouter.swift in Sources */,
+				1170F27C23B222DB004903F2 /* CoordinatorFactory.swift in Sources */,
+				1170F28923B22492004903F2 /* MainCoordinator.swift in Sources */,
+				1170F28123B222E3004903F2 /* ScreenFactory.swift in Sources */,
+				1170F28723B222EA004903F2 /* Router.swift in Sources */,
+				1170F27923B22262004903F2 /* Coordinator.swift in Sources */,
 				11D09D5F23B213EA00CA2011 /* AppDelegate.swift in Sources */,
+				1170F28023B222E3004903F2 /* MainScreenFactory.swift in Sources */,
+				1170F28523B222EA004903F2 /* Presentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
