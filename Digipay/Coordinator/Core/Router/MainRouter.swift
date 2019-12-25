@@ -5,9 +5,9 @@ final class MainRouter: NSObject, Router {
     
     private weak var rootController: UINavigationController?
     private var completions: [UIViewController : () -> Void]
-    var window: UIWindow?
+    private var window: UIWindow?
     
-    init(rootController: UINavigationController, window: UIWindow? = nil) {
+    init(rootController: UINavigationController, window: UIWindow?) {
         self.rootController = rootController
         self.window = window
         self.rootController?.modalPresentationStyle = .fullScreen
@@ -92,9 +92,8 @@ final class MainRouter: NSObject, Router {
     
     func setRootModule(_ module: Presentable?, hideBar: Bool) {
         guard let controller = module?.toPresent() else { return }
-        self.window?.rootViewController = controller
-//        rootController?.setViewControllers([controller], animated: false)
-//        rootController?.isNavigationBarHidden = hideBar
+        rootController?.setViewControllers([controller], animated: false)
+        rootController?.isNavigationBarHidden = hideBar
     }
     
     func popToRootModule(animated: Bool) {
@@ -110,4 +109,10 @@ final class MainRouter: NSObject, Router {
         completion()
         completions.removeValue(forKey: controller)
     }
+    
+    func setRoot(_ module: Presentable?) {
+        guard let controller = module?.toPresent() else { return }
+        window?.rootViewController = controller
+    }
+    
 }

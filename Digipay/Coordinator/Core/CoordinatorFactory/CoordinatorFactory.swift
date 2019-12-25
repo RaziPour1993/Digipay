@@ -2,6 +2,9 @@ import Foundation
 
 protocol CoordinatorFactory: class {
     
+    func makeLoginCoordinator(delegate: LoginCoordinatorDelegate)-> LoginCoordinator
+    func makeMainCoordinator()-> MainCoordinator
+    
     /// Child Coordinators
     var childCoordinators: [Coordinator] { get set }
     func addChildCoordinator(_ coordinator: Coordinator)

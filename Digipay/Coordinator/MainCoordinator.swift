@@ -14,14 +14,28 @@ final class MainCoordinator: Coordinator {
     var coordinatorFactory: CoordinatorFactory
     var router: Router
     
-    init(router: Router) {
-        self.screenFactory = MainScreenFactory()
-        self.coordinatorFactory = MainCoordinatorFactory()
+    init(_ coordinatorFactory: CoordinatorFactory, _ screenFactory: ScreenFactory, _ router: Router) {
+        self.screenFactory = screenFactory
+        self.coordinatorFactory = coordinatorFactory
         self.router = router
     }
     
     func start() {
+        startLoginCoordinator()
+    }
+    
+}
+
+extension MainCoordinator: LoginCoordinatorDelegate {
+    
+    func didLogin(coordinator: LoginCoordinator) {
+        self.coordinatorFactory.removeChildCoordinator(coordinator)
         
+    }
+    
+    func startLoginCoordinator() {
+        let coordinator = self.coordinatorFactory.makeLoginCoordinator(delegate: self)
+        coordinator.start()
     }
     
 }

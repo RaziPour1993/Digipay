@@ -2,7 +2,10 @@ import UIKit
 
 final class MainScreenFactory: ScreenFactory {
     
-    init() {
-        
+    func makeLoginScreen(delegate: LoginScreenDelegate) -> LoginViewController {
+        let presenter = LoginPresenterIMP(delegate: delegate)
+        let vc = LoginViewController(presenter)
+        return vc
     }
+    
 }

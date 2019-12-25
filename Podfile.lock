@@ -1,3 +1,16 @@
-PODFILE CHECKSUM: 58ee8702a0d09bddf0a1c89911715cbd9ef43726
+PODS:
+  - SpotifyLogin (0.1.6)
+
+DEPENDENCIES:
+  - SpotifyLogin
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SpotifyLogin
+
+SPEC CHECKSUMS:
+  SpotifyLogin: 9cdf82ff13e5f37e5ddc7fd07cf9793a9ebd1124
+
+PODFILE CHECKSUM: 0510f2e79b134797e7303142dab90bd29d635e61
 
 COCOAPODS: 1.5.2
