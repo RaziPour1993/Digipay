@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import SpotifyLogin
 
 class LoginViewController: UIViewController {
     
-    private weak var presenter: LoginPresenter?
+    @IBOutlet weak var spotifyLoginButton: SpotifyLoginButton!
+    
+    var presenter: LoginPresenter?
     
     init(_ presenter: LoginPresenter) {
         super.init(nibName: nil, bundle: nil)
         self.presenter = presenter
         self.presenter?.set(view: self)
+    }
+    
+    deinit {
+        print()
     }
     
     required init?(coder: NSCoder) {
@@ -24,8 +31,21 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.presenter?.present()
+        config()
+        presenter?.present()
+    }
+    
+    func config(){
+        self.spotifyLoginButton.addTarget(self, action: #selector(spotifyLoginButtonAction), for: .touchDown)
+    }
+    
+    @objc func spotifyLoginButtonAction() {
+        SpotifyLoginPresenter.login(from: self,
+                                    scopes: [.streaming,
+                                             .userReadTop,
+                                             .playlistReadPrivate,
+                                             .userLibraryRead]
+        )
     }
     
 }

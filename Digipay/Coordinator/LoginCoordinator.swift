@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LoginCoordinatorDelegate: class {
-    
+    func didLogin(coordinator: LoginCoordinator)
 }
 
 final class LoginCoordinator: Coordinator {
@@ -17,11 +17,13 @@ final class LoginCoordinator: Coordinator {
     var screenFactory: ScreenFactory
     var coordinatorFactory: CoordinatorFactory
     var router: Router
+    weak var delegate: LoginCoordinatorDelegate?
     
-    init(_ coordinatorFactory: CoordinatorFactory, _ screenFactory: ScreenFactory, _ router: Router) {
+    init(_ coordinatorFactory: CoordinatorFactory, _ screenFactory: ScreenFactory, _ router: Router, delegate: LoginCoordinatorDelegate) {
         self.screenFactory = screenFactory
         self.coordinatorFactory = coordinatorFactory
         self.router = router
+        self.delegate = delegate
     }
     
     func start() {
@@ -32,9 +34,13 @@ final class LoginCoordinator: Coordinator {
 
 extension LoginCoordinator: LoginScreenDelegate {
     
+    func didLogin() {
+        self.delegate?.didLogin(coordinator: self)
+    }
+    
     func displayLoginScreen(){
         let vc = self.screenFactory.makeLoginScreen(delegate: self)
-        self.router.setRootModule(vc)
+        self.router.setRoot(vc)
     }
     
 }

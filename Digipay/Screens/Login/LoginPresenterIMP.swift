@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpotifyLogin
 
 class LoginPresenterIMP {
     
@@ -15,6 +16,10 @@ class LoginPresenterIMP {
     
     init(delegate: LoginScreenDelegate) {
         self.delegate = delegate
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
 }
@@ -26,7 +31,15 @@ extension LoginPresenterIMP: LoginPresenter {
     }
     
     func present() {
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(spotifyLoginSuccessful), name: .SpotifyLoginSuccessful, object: nil)
+    }
+    
+}
+
+extension LoginPresenterIMP {
+    
+    @objc func spotifyLoginSuccessful() {
+        self.delegate?.didLogin()
     }
     
 }

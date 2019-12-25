@@ -28,8 +28,13 @@ final class MainCoordinator: Coordinator {
 
 extension MainCoordinator: LoginCoordinatorDelegate {
     
+    func didLogin(coordinator: LoginCoordinator) {
+        self.coordinatorFactory.removeChildCoordinator(coordinator)
+        
+    }
+    
     func startLoginCoordinator() {
-        let coordinator = self.coordinatorFactory.makeLoginCoordinator(self.router, delegate: self)
+        let coordinator = self.coordinatorFactory.makeLoginCoordinator(delegate: self)
         coordinator.start()
     }
     

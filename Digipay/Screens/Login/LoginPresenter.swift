@@ -13,9 +13,9 @@ protocol LoginPresenter: Presenter {
 }
 
 protocol LoginPresentingView: PresentingView {
-
+    
 }
 
 protocol LoginScreenDelegate: class {
-    
+    func didLogin()
 }
