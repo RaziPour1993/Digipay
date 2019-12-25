@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpotifyLogin
 
 final class MainCoordinator: Coordinator {
     
@@ -21,7 +22,14 @@ final class MainCoordinator: Coordinator {
     }
     
     func start() {
-        startLoginCoordinator()
+        
+        guard LocalDataManeger.shared.getToken() != nil  else {
+            self.startLoginCoordinator()
+            return
+        }
+        
+        self.startSearchCoordinator()
+        
     }
     
 }
@@ -30,11 +38,20 @@ extension MainCoordinator: LoginCoordinatorDelegate {
     
     func didLogin(coordinator: LoginCoordinator) {
         self.coordinatorFactory.removeChildCoordinator(coordinator)
-        
+        startSearchCoordinator()
     }
     
     func startLoginCoordinator() {
         let coordinator = self.coordinatorFactory.makeLoginCoordinator(delegate: self)
+        coordinator.start()
+    }
+    
+}
+
+extension MainCoordinator: SearchCoordinatorDelegate {
+    
+    func startSearchCoordinator() {
+        let coordinator = self.coordinatorFactory.makeSearchCoordinator(delegate: self)
         coordinator.start()
     }
     

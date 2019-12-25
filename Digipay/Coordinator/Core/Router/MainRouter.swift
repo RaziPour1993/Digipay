@@ -110,6 +110,18 @@ final class MainRouter: NSObject, Router {
         completions.removeValue(forKey: controller)
     }
     
+    func setRoot(_ module: Presentable?, withNavigation: Bool) {
+        guard let controller = module?.toPresent() else { return }
+        
+        if withNavigation {
+            rootController?.setViewControllers([controller], animated: false)
+            self.window?.rootViewController = self.rootController
+        } else {
+            self.setRoot(module)
+        }
+        
+    }
+    
     func setRoot(_ module: Presentable?) {
         guard let controller = module?.toPresent() else { return }
         window?.rootViewController = controller
