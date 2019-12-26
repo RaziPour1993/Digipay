@@ -3,7 +3,7 @@ import UIKit
 
 final class MainRouter: NSObject, Router {
     
-    private weak var rootController: UINavigationController?
+    private var rootController: UINavigationController?
     private var completions: [UIViewController : () -> Void]
     private var window: UIWindow?
     
@@ -114,6 +114,7 @@ final class MainRouter: NSObject, Router {
         guard let controller = module?.toPresent() else { return }
         
         if withNavigation {
+            rootController = UINavigationController()
             rootController?.setViewControllers([controller], animated: false)
             self.window?.rootViewController = self.rootController
         } else {

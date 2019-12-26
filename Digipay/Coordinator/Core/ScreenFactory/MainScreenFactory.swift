@@ -20,4 +20,10 @@ final class MainScreenFactory: ScreenFactory {
         return vc
     }
     
+    func mekeTrackDetailScreen(delegate: TrackDetailScreenDelegate, _ track: Track) -> TrackDetailViewController {
+        let presenter = TrackDetailPresenterIMP(delegate:delegate, track: track)
+        let vc = TrackDetailViewController(presenter)
+        return vc
+    }
+    
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TrackCellViewModelDelegate: class {
-    func didSelect(track: Track, index: IndexPath)
+    func didSelect(index: IndexPath)
 }
 
 class TrackCellViewModel: TableViewCellModel {
@@ -31,7 +31,7 @@ class TrackCellViewModel: TableViewCellModel {
         self.track = track
         self.name = track.name
         self.image = track.album.image
-        self.artists = track.artists.map({ (item) -> String in return item.name }).joined(separator: ", ")
+        self.artists = track.artistsJoined
         self.popularity = track.popularity
     }
     

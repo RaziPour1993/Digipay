@@ -32,7 +32,11 @@ class SearchViewModel: TableViewModel {
 
 extension SearchViewModel: TrackCellViewModelDelegate {
     
-    func didSelect(track: Track, index: IndexPath) {
-        self.delegate?.didSelect(track: track)
+    func didSelect(index: IndexPath) {
+        guard let item = self.sections[index.section].cellModels[index.row] as? TrackCellViewModel else {
+            return
+        }
+        
+        self.delegate?.didSelect(track: item.track)
     }
 }
