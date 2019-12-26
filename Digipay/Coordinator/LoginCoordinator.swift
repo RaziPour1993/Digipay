@@ -19,7 +19,7 @@ final class LoginCoordinator: Coordinator {
     var router: Router
     weak var delegate: LoginCoordinatorDelegate?
     
-    init(_ coordinatorFactory: CoordinatorFactory, _ screenFactory: ScreenFactory, _ router: Router, delegate: LoginCoordinatorDelegate) {
+    init(_ coordinatorFactory: CoordinatorFactory, _ screenFactory: ScreenFactory, _ router: Router, _ delegate: LoginCoordinatorDelegate) {
         self.screenFactory = screenFactory
         self.coordinatorFactory = coordinatorFactory
         self.router = router

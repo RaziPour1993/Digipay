@@ -13,13 +13,19 @@ final class MainCoordinatorFactory: CoordinatorFactory {
     }
     
     func makeLoginCoordinator(delegate: LoginCoordinatorDelegate) -> LoginCoordinator {
-        let coordinator = LoginCoordinator(self, self.screenFactory, router, delegate: delegate)
+        let coordinator = LoginCoordinator(self, self.screenFactory, router, delegate)
         self.addChildCoordinator(coordinator)
         return coordinator
     }
     
     func makeMainCoordinator() -> MainCoordinator {
         let coordinator = MainCoordinator(self, self.screenFactory, router)
+        self.addChildCoordinator(coordinator)
+        return coordinator
+    }
+    
+    func makeSearchCoordinator(delegate: SearchCoordinatorDelegate) -> SearchCoordinator {
+        let coordinator = SearchCoordinator(self, self.screenFactory, router, delegate)
         self.addChildCoordinator(coordinator)
         return coordinator
     }

@@ -17,21 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var coordinatorFactory: CoordinatorFactory!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let redirectURL: URL = URL(string: "dpg://mydigipay/")!
+        SpotifyLogin.shared.configure(clientID: "ba05b9cd59634cefa8493ac961d76ed6",
+                                      clientSecret: "80b7235a88264654a105a989f6775a59",
+                                      redirectURL: redirectURL)
+        
+        SpotifyLogin.shared.getAccessToken { (accessToken, error) in
+            if error != nil {
+                // User is not logged in, show log in flow.
+            }
+        }
+        
         config()
         start()
         return true
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        let handled = SpotifyLogin.shared.applicationOpenURL(url) { _ in }
+        let handled = SpotifyLogin.shared.applicationOpenURL(url) { (error) in
+            print(error)
+        }
         return handled
     }
     
     func config() {
-        let redirectURL: URL = URL(string: "dpg://mydigipay/")!
-        SpotifyLogin.shared.configure(clientID: "ba05b9cd59634cefa8493ac961d76ed6",
-                                      clientSecret: "80b7235a88264654a105a989f6775a59",
-                                      redirectURL: redirectURL)
+
     }
     
     private func start(){

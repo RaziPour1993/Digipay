@@ -39,7 +39,17 @@ extension LoginPresenterIMP: LoginPresenter {
 extension LoginPresenterIMP {
     
     @objc func spotifyLoginSuccessful() {
-        self.delegate?.didLogin()
+        
+        SpotifyLogin.shared.getAccessToken { [weak self] (token, error) in
+            
+            guard let token = token else {
+                return
+            }
+            
+            LocalDataManeger.shared.set(token: token)
+            self!.delegate?.didLogin()
+            
+        }
     }
     
 }
