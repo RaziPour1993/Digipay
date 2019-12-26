@@ -1,0 +1,12 @@
+/* 
+  Localization.strings
+  Digipay
+
+  Created by Mohammad Razipour on 12/24/19.
+  Copyright © 2019 Mohammad Razipour. All rights reserved.
+*/
+
+"NoTrackMessage" = "No track ";
+"NoTrackTitle" = "No Track Title";
+"Tracks" = "Tracks";
+"SearchBarPlaceholder" = "Type something here to search";

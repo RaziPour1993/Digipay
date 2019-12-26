@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.9.0)
+  - Kingfisher (5.7.1)
+  - SpotifyLogin (0.1.6)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher
+  - SpotifyLogin
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Kingfisher
+    - SpotifyLogin
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
+  SpotifyLogin: 9cdf82ff13e5f37e5ddc7fd07cf9793a9ebd1124
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: d0cbb41312256e42fd0ee60714a7c43012ffd97e
+
+COCOAPODS: 1.5.2
