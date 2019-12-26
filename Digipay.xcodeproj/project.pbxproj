@@ -55,6 +55,11 @@
 		119905F423B4A87B00597A15 /* RetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119905F323B4A87B00597A15 /* RetryView.swift */; };
 		119905F623B4A88800597A15 /* RetryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119905F523B4A88800597A15 /* RetryView.xib */; };
 		119905F823B4B50400597A15 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119905F723B4B50400597A15 /* UIView.swift */; };
+		119905FE23B4C14D00597A15 /* TrackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119905FC23B4C14D00597A15 /* TrackDetailViewController.swift */; };
+		119905FF23B4C14D00597A15 /* TrackDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119905FD23B4C14D00597A15 /* TrackDetailViewController.xib */; };
+		1199060223B4C15800597A15 /* TrackDetailPresenterIMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1199060123B4C15800597A15 /* TrackDetailPresenterIMP.swift */; };
+		1199060323B4C15800597A15 /* TrackDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1199060023B4C15700597A15 /* TrackDetailPresenter.swift */; };
+		1199060523B4C7A400597A15 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1199060423B4C7A400597A15 /* UIImageView.swift */; };
 		11B626AA23B3B46100052654 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B626A923B3B46100052654 /* Track.swift */; };
 		11B626AC23B3B7C200052654 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B626AB23B3B7C200052654 /* Album.swift */; };
 		11B626AE23B3B99200052654 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B626AD23B3B99200052654 /* Artist.swift */; };
@@ -115,6 +120,11 @@
 		119905F323B4A87B00597A15 /* RetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryView.swift; sourceTree = "<group>"; };
 		119905F523B4A88800597A15 /* RetryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RetryView.xib; sourceTree = "<group>"; };
 		119905F723B4B50400597A15 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		119905FC23B4C14D00597A15 /* TrackDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailViewController.swift; sourceTree = "<group>"; };
+		119905FD23B4C14D00597A15 /* TrackDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailViewController.xib; sourceTree = "<group>"; };
+		1199060023B4C15700597A15 /* TrackDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailPresenter.swift; sourceTree = "<group>"; };
+		1199060123B4C15800597A15 /* TrackDetailPresenterIMP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailPresenterIMP.swift; sourceTree = "<group>"; };
+		1199060423B4C7A400597A15 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		11B626A923B3B46100052654 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		11B626AB23B3B7C200052654 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		11B626AD23B3B99200052654 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
@@ -340,6 +350,7 @@
 		1171F13923B2184900CBF64C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				119905FB23B4C14300597A15 /* TrackDetail */,
 				11086E2823B3DFA200A76F46 /* Shared */,
 				11275C1823B3639B00AE578F /* Search */,
 				1170F29323B22CF0004903F2 /* Login */,
@@ -357,6 +368,17 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		119905FB23B4C14300597A15 /* TrackDetail */ = {
+			isa = PBXGroup;
+			children = (
+				119905FC23B4C14D00597A15 /* TrackDetailViewController.swift */,
+				119905FD23B4C14D00597A15 /* TrackDetailViewController.xib */,
+				1199060023B4C15700597A15 /* TrackDetailPresenter.swift */,
+				1199060123B4C15800597A15 /* TrackDetailPresenterIMP.swift */,
+			);
+			path = TrackDetail;
+			sourceTree = "<group>";
+		};
 		11B626B123B3BE4400052654 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +386,7 @@
 				11B626B423B3BEB100052654 /* String.swift */,
 				119905F123B49B4F00597A15 /* UIViewController.swift */,
 				119905F723B4B50400597A15 /* UIView.swift */,
+				1199060423B4C7A400597A15 /* UIImageView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -482,6 +505,7 @@
 				11D09D6B23B213EE00CA2011 /* LaunchScreen.storyboard in Resources */,
 				1171F13623B2183800CBF64C /* Localization.strings in Resources */,
 				11275C1C23B363C000AE578F /* SearchViewController.xib in Resources */,
+				119905FF23B4C14D00597A15 /* TrackDetailViewController.xib in Resources */,
 				11D09D6823B213EE00CA2011 /* Assets.xcassets in Resources */,
 				119905F623B4A88800597A15 /* RetryView.xib in Resources */,
 			);
@@ -558,11 +582,14 @@
 				11086E2623B3C50F00A76F46 /* TableViewModel.swift in Sources */,
 				11086E2523B3C50F00A76F46 /* TableViewHeaderSection.swift in Sources */,
 				112F081E23B3769E00B85527 /* LocalDataManeger.swift in Sources */,
+				119905FE23B4C14D00597A15 /* TrackDetailViewController.swift in Sources */,
+				1199060323B4C15800597A15 /* TrackDetailPresenter.swift in Sources */,
 				11086E2323B3C50F00A76F46 /* TableViewCellModel.swift in Sources */,
 				1170F28923B22492004903F2 /* MainCoordinator.swift in Sources */,
 				11086E3123B3E19600A76F46 /* TrackTableViewCell.swift in Sources */,
 				1170F28123B222E3004903F2 /* ScreenFactory.swift in Sources */,
 				11086E2223B3C50F00A76F46 /* TableViewSection.swift in Sources */,
+				1199060223B4C15800597A15 /* TrackDetailPresenterIMP.swift in Sources */,
 				11275C1B23B363C000AE578F /* SearchViewController.swift in Sources */,
 				11275C2A23B3678700AE578F /* SearchCoordinator.swift in Sources */,
 				11086E2123B3C50F00A76F46 /* TableViewDataSource.swift in Sources */,
@@ -573,6 +600,7 @@
 				11086E2E23B3DFBF00A76F46 /* Connectable.swift in Sources */,
 				112F082E23B385C300B85527 /* NetworkResponseStatus.swift in Sources */,
 				1170F27923B22262004903F2 /* Coordinator.swift in Sources */,
+				1199060523B4C7A400597A15 /* UIImageView.swift in Sources */,
 				11B626B323B3BE5600052654 /* Date.swift in Sources */,
 				112F082723B3839300B85527 /* NetworkManeger.swift in Sources */,
 				1101582823B3F03500C11234 /* TrackCellViewModel.swift in Sources */,

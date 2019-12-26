@@ -37,7 +37,7 @@ final class SearchCoordinator: Coordinator {
 extension SearchCoordinator: SearchScreenDelegate {
     
     func didSelect(track: Track) {
-        print("didSelect", track.name)
+        self.displayTrackDetailScreen(track)
     }
     
     func didSignOut() {
@@ -47,6 +47,15 @@ extension SearchCoordinator: SearchScreenDelegate {
     func displaySearchScreen(){
         let vc = self.screenFactory.makeSearchScreen(delegate: self)
         self.router.setRoot(vc, withNavigation: true)
+    }
+    
+}
+
+extension SearchCoordinator: TrackDetailScreenDelegate {
+    
+    func displayTrackDetailScreen(_ track: Track){
+        let vc = self.screenFactory.mekeTrackDetailScreen(delegate: self, track)
+        self.router.push(vc)
     }
     
 }

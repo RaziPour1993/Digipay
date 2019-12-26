@@ -40,6 +40,10 @@ struct Track {
         self.popularity = json[CodingKeys.popularity.rawValue].intValue
     }
     
+    var artistsJoined: String {
+        return self.artists.map({ (item) -> String in return item.name }).joined(separator: ", ")
+    }
+    
 }
 
 

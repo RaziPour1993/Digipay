@@ -18,6 +18,7 @@ class TrackTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     @IBOutlet weak var contentContainerView: UIView!
     
+    var indexPath: IndexPath!
     var viewModel: TrackCellViewModel? {
         didSet {
             guard let viewModel = self.viewModel else {
@@ -60,6 +61,11 @@ class TrackTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
+        if selected {
+            self.viewModel?.delegate?.didSelect(index: indexPath)
+        }
+        
     }
     
     func viewCofig(){
@@ -77,6 +83,7 @@ extension TrackTableViewCell: ConfigurableTableViewCell {
     func configure(with model: TableViewCellModel, indexPath: IndexPath) {
         guard let model = model as? TrackCellViewModel else { fatalError(self.description) }
         self.viewModel = model
+        self.indexPath = indexPath
     }
     
 }

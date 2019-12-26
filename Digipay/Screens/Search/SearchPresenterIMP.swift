@@ -67,7 +67,7 @@ extension SearchPresenterIMP: SearchPresenter {
 extension SearchPresenterIMP: SearchViewModelDelegate {
     
     func didSelect(track: Track) {
-        
+        self.delegate?.didSelect(track: track)
     }
     
     func getTracks(info: SearchTrack){
