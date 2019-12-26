@@ -5,7 +5,7 @@ final class MainScreenFactory: ScreenFactory {
     var repository: RepositoryIMP
     
     init() {
-        self.repository = RepositoryIMP()
+        self.repository = RepositoryIMP(networkManeger: NetworkManegerImp())
     }
     
     func makeSearchScreen(delegate: SearchScreenDelegate) -> SearchViewController {

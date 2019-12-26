@@ -55,4 +55,9 @@ extension MainCoordinator: SearchCoordinatorDelegate {
         coordinator.start()
     }
     
+    func didSignOut(coordinator: SearchCoordinator) {
+        self.coordinatorFactory.removeChildCoordinator(coordinator)
+        startLoginCoordinator()
+    }
+    
 }

@@ -11,7 +11,7 @@ import Foundation
 import Foundation
 
 protocol SearchCoordinatorDelegate: class {
-    
+    func didSignOut(coordinator: SearchCoordinator)
 }
 
 final class SearchCoordinator: Coordinator {
@@ -35,6 +35,14 @@ final class SearchCoordinator: Coordinator {
 }
 
 extension SearchCoordinator: SearchScreenDelegate {
+    
+    func didSelect(track: Track) {
+        print("didSelect", track.name)
+    }
+    
+    func didSignOut() {
+        self.delegate?.didSignOut(coordinator: self)
+    }
     
     func displaySearchScreen(){
         let vc = self.screenFactory.makeSearchScreen(delegate: self)

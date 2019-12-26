@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
     }
     
     @objc func spotifyLoginButtonAction() {
+        SpotifyLogin.shared.logout()
         SpotifyLoginPresenter.login(from: self,
                                     scopes: [.streaming,
                                              .userReadTop,

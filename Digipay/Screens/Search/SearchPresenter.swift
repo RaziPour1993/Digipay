@@ -10,12 +10,17 @@ import Foundation
 
 protocol SearchPresenter: Presenter {
     func set(view: SearchPresentingView)
+    func didEndSearchViewModel()
+    func didSearch(text: String)
+    func didRetry()
+    func didSignOut()
 }
 
 protocol SearchPresentingView: PresentingView {
-    
+    func didUpdate(search viewModel: TableViewModel)
 }
 
 protocol SearchScreenDelegate: class {
-    
+    func didSelect(track: Track)
+    func didSignOut()
 }

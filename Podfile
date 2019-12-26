@@ -6,6 +6,8 @@ inhibit_all_warnings!
 target 'Digipay' do
 
   pod 'SpotifyLogin'
-
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'Kingfisher'
 
 end
