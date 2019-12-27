@@ -10,7 +10,7 @@ import Foundation
 
 class RepositoryIMP {
     
-     var networkManeger: NetworkManeger
+    var networkManeger: NetworkManeger
     
     init(networkManeger: NetworkManeger) {
         self.networkManeger = networkManeger

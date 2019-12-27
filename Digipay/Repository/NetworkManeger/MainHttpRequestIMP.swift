@@ -14,12 +14,12 @@ enum MainHttpRequestIMP: HttpRequest {
     case search(_ info: ParametersGetter)
     
     private var environment: String {
-        return "https://api.spotify.com"
+        return Constant.backendServer.value
     }
     
     var path: String {
         switch self {
-        case .search: return "https://api.spotify.com/v1/search"
+        case .search: return "\(environment)/v1/search"
         }
     }
     
