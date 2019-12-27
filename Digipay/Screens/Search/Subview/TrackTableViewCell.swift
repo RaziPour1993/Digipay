@@ -29,28 +29,29 @@ class TrackTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
             self.nameLabel.text = viewModel.name
             self.artistsLabel.text = viewModel.artists
             self.popularityLabel.text = viewModel.popularity.description
+            coverImageView.setImage(url: viewModel.image) { _ in }
             
-            let url = URL(string: viewModel.image)
-            let processor = DownsamplingImageProcessor(size: CGSize(width: 50, height: 50)) >> RoundCornerImageProcessor(cornerRadius: 20)
-            coverImageView.kf.indicatorType = .activity
-            coverImageView.kf.setImage(
-                with: url,
-                placeholder: nil,
-                options: [
-                    .processor(processor),
-                    .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(1)),
-                    .cacheOriginalImage
-                ])
-            {
-                result in
-                switch result {
-                case .success(let value): break
-//                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
-                case .failure(let error): break
-//                    print("Job failed: \(error.localizedDescription)")
-                }
-            }
+//            let url = URL(string: viewModel.image)
+//            let processor = DownsamplingImageProcessor(size: CGSize(width: 50, height: 50)) >> RoundCornerImageProcessor(cornerRadius: 20)
+//            coverImageView.kf.indicatorType = .activity
+//            coverImageView.kf.setImage(
+//                with: url,
+//                placeholder: nil,
+//                options: [
+//                    .processor(processor),
+//                    .scaleFactor(UIScreen.main.scale),
+//                    .transition(.fade(1)),
+//                    .cacheOriginalImage
+//                ])
+//            {
+//                result in
+//                switch result {
+//                case .success(let value): break
+////                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+//                case .failure(let error): break
+////                    print("Job failed: \(error.localizedDescription)")
+//                }
+//            }
         }
     }
     
@@ -70,6 +71,7 @@ class TrackTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     func viewCofig(){
         self.contentContainerView.layer.cornerRadius = 10
+        self.coverImageView.layer.cornerRadius = 10
     }
     
     override func prepareForReuse() {

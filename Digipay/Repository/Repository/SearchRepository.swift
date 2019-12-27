@@ -9,12 +9,9 @@
 import Foundation
 import SwiftyJSON
 
-
 protocol SearchRepository {
     func searchTracks(info: SearchTrack, completion: @escaping(Result<Tracks, NetworkResponseStatus>)-> Void)
 }
-
-
 
 extension RepositoryIMP: SearchRepository {
     

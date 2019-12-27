@@ -15,15 +15,12 @@ extension UIImageView {
     func setImage(url: String, completion: @escaping (Result<Bool, Error>)->Void) {
         
         let url = URL(string: url)
-        let processor = DownsamplingImageProcessor(size: CGSize(width: 50, height: 50)) >> RoundCornerImageProcessor(cornerRadius: 20)
         self.kf.indicatorType = .activity
         self.kf.setImage(
             with: url,
-            placeholder: nil,
+            placeholder: UIImage(named: "file-spotify-logo-png-4"),
             options: [
-                .processor(processor),
                 .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(1)),
                 .cacheOriginalImage
             ])
         {
