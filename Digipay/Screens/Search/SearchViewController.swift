@@ -62,7 +62,7 @@ extension SearchViewController {
         self.tableView.dataSource = self.dataSource
         self.tableView.delegate = self.dataSource
         self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 50.0
+        self.tableView.estimatedRowHeight = 100.0
         self.tableView.allowsSelection = true
         self.tableView.tableFooterView = UIView()
         self.tableView.sectionHeaderHeight = 0.0

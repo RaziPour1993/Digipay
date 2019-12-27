@@ -30,6 +30,7 @@ class TrackDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        config()
         presenter?.present()
     }
     
@@ -39,6 +40,8 @@ extension TrackDetailViewController {
     
     func config(){
         self.navigationItem.title = "TrackDetail".localized
+        self.artistsLabel.numberOfLines = 0
+        self.nameLabel.numberOfLines = 0
     }
     
 }

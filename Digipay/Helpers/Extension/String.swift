@@ -27,4 +27,12 @@ extension String {
         return NSLocalizedString(self, tableName: "Localization", value: "\(self)", comment: "")
     }
     
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + self.dropFirst()
+    }
+    
+    mutating func capitalizeFirstLetter() {
+        self = self.capitalizingFirstLetter()
+    }
+    
 }

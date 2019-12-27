@@ -14,7 +14,7 @@ enum InformationalStatus: Int, Error {
     case switchingProtocols = 101
     case processing = 102
     
-    var description: String { return "" }
+    var description: String { return "\(self)" }
 }
 
 // 2xx Success
@@ -30,7 +30,7 @@ enum SuccessStatus: Int, Error {
     case alreadyReported = 208
     case iMUsed = 226
     
-    var description: String { return "" }
+    var description: String { return "\(self)" }
 }
 
 // 3xx Redirection
@@ -45,7 +45,7 @@ enum RedirectionStatus: Int, Error {
     case temporaryRedirect = 307
     case permanentRedirect = 308
     
-    var description: String { return "" }
+    var description: String { return "\(self)" }
 }
 
 // 4xx Client Error
@@ -84,7 +84,7 @@ enum ClientErrorStatus: Int, Error {
     case unavailableForLegalReasons = 451
     case clientClosedRequest = 499
     
-    var description: String { return "" }
+    var description: String { return "\(self)" }
 }
 
 // 5xx Server Error
@@ -104,7 +104,7 @@ enum ServerErrorStatus: Int, Error {
     case networkReadTimeoutError = 598
     case networkConnectTimeoutError = 599
     
-    var description: String { return "InternalServerError" }
+    var description: String { return "\(self)" }
 }
 
 // Internal Status
@@ -115,14 +115,8 @@ enum InternalStatus: Error {
     case noData
     case unableToDecode
     
-    var description: String {
-        switch self {
-        case .internetAccessError:
-            return "InternetAccessError"
-        default:
-            return ""
-        }
-    }
+    var description: String { return "\(self)" }
+    
 }
 
 enum NetworkResponseStatus: Error, Equatable {
@@ -139,19 +133,19 @@ enum NetworkResponseStatus: Error, Equatable {
         }
     }
     
-    case internalStatus(status: InternalStatus, message: String?) // Internal Status
+    case internalStatus(status: InternalStatus, message: String) // Internal Status
     
     //MARK: HTTP Status
-    case informational(status: InformationalStatus, message: String?) // 1xx Informational
-    case success(status: SuccessStatus, message: String?) // 2xx Success
-    case redirection(status: RedirectionStatus, message: String?) // 3xx Redirection
-    case clientError(status: ClientErrorStatus, message: String?) // 4xx Client Error
-    case serverError(status: ServerErrorStatus, message: String?) // 5xx Server Error
+    case informational(status: InformationalStatus, message: String) // 1xx Informational
+    case success(status: SuccessStatus, message: String) // 2xx Success
+    case redirection(status: RedirectionStatus, message: String) // 3xx Redirection
+    case clientError(status: ClientErrorStatus, message: String) // 4xx Client Error
+    case serverError(status: ServerErrorStatus, message: String) // 5xx Server Error
     
-    init(statusCode: Int?, message: String? = nil){
+    init(statusCode: Int?, message: String = ""){
         
         guard let code = statusCode else {
-            self = .internalStatus(status: .internetAccessError, message: "ErrorInternetAccess")
+            self = .internalStatus(status: .internetAccessError, message: "")
             return
         }
         
@@ -197,12 +191,24 @@ enum NetworkResponseStatus: Error, Equatable {
     
     var description: String {
         switch self {
-        case .internalStatus(_, let description): return description ?? ""
-        case .informational(_, let description): return description ?? ""
-        case .success(_, let description): return description ?? ""
-        case .redirection(_, let description): return description ?? ""
-        case .clientError(_, let description): return description ?? ""
-        case .serverError(_, let description): return description ?? ""
+        case .internalStatus(let status, let message):
+            return (message.isEmpty ? status.description : message).capitalizingFirstLetter()
+            
+        case .informational(let status, let message):
+            return (message.isEmpty ? status.description : message).capitalizingFirstLetter()
+            
+        case .success(let status, let message):
+            return (message.isEmpty ? status.description : message).capitalizingFirstLetter()
+            
+        case .redirection(let status, let message):
+            return (message.isEmpty ? status.description : message).capitalizingFirstLetter()
+            
+        case .clientError(let status, let message):
+            return (message.isEmpty ? status.description : message).capitalizingFirstLetter()
+            
+        case .serverError(let status, let message):
+            return (message.isEmpty ? status.description : message).capitalizingFirstLetter()
+            
         }
     }
     

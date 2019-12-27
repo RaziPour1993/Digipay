@@ -1,12 +1,20 @@
 /* 
-  Localization.strings
-  Digipay
+ Localization.strings
+ Digipay
+ 
+ Created by Mohammad Razipour on 12/24/19.
+ Copyright © 2019 Mohammad Razipour. All rights reserved.
+ */
 
-  Created by Mohammad Razipour on 12/24/19.
-  Copyright © 2019 Mohammad Razipour. All rights reserved.
-*/
-
-"NoTrackMessage" = "No track ";
-"NoTrackTitle" = "No Track Title";
 "Tracks" = "Tracks";
-"SearchBarPlaceholder" = "Type something here to search";
+"TrackDetail" = "Track Detail";
+"BadRequest" = "Bad request";
+"Unauthorized" = "Unauthorized";
+"AymentRequired" = "Ayment required";
+"Forbidden" = "Forbidden";
+"NetworkConnectTimeoutError" = "Network connect time out error";
+"NetworAuthenticationRequired" = "Networ authentication required";
+"InternalServerError" = "Internal server error";
+"InternetAccessError" = "Internet access error";
+"SearchBarPlaceholder" = "Search track name";
+"SignOut" = "Sign Out";
