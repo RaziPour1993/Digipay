@@ -71,7 +71,7 @@ class TrackTableViewCell: UITableViewCell, ReusableView, NibLoadableView {
     
     func viewCofig(){
         self.contentContainerView.layer.cornerRadius = 10
-        //self.artistsLabel.numberOfLines = 0
+        self.coverImageView.layer.cornerRadius = 10
     }
     
     override func prepareForReuse() {
