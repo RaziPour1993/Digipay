@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>spotify-action</string>
@@ -61,11 +61,11 @@
 	<string>Light</string>
 	<key>backendServer</key>
 	<string>$(backendServer)</string>
-	<key>redirectURL</key>
-	<string>$(redirectURL)</string>
 	<key>clientID</key>
 	<string>$(clientID)</string>
 	<key>clientSecret</key>
 	<string>$(clientSecret)</string>
+	<key>redirectURL</key>
+	<string>$(redirectURL)</string>
 </dict>
 </plist>
